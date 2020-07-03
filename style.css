@@ -1,32 +1,299 @@
-/*
-  color =>
-    biru = #086AD8
-    hitam = #373F41
-    putih = #FFFFFF
-    join-us bg = #086AD8, opacity 6%
-    footer bg = #292F31
- */
+ /* Variables */
+:root {
+  --primary: #086ad8;
+  --dark: #373f41;
+  --white: #fff;
+  --gray: #737b7d;
+  --desktop: 992px;
+  --tablet: 768px;
+  --mobile: 576px;
+}
 
-/* Reset CSS */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Base */
+body {
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    padding: 0 165px;
+  }
+}
+
+.btn {
+  background: var(--primary);
+  border: none;
+  display: inline-block;
+  width: 138px;
+  height: 42px;
+  box-sizing: border-box;
+  line-height: 42px;
+  color: var(--white);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #004da2;
+}
+
+input {
+  border: none;
+  width: 282px;
+  height: 42px;
+  padding: 11px 16px;
+  box-sizing: border-box;
+  border-radius: 1px;
+  color: var(--gray);
+  font-size: 0.875rem;
+}
+
+/* Fonts */
 body {
   font-family: 'Muli', sans-serif;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 576px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.footer-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--black);
+  font-weight: bold;
+}
+
+p,
+a {
+  color: var(--black);
+}
+
+p {
+  line-height: 1.5;
+}
+
+.subtitle {
+  color: var(--gray);
+  letter-spacing: 0.313rem;
+  font-size: 0.875em;
+}
+
+h1 {
+  font-size: 2.75em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.25em;
 }
 
 /* Header */
+.header .navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60px;
+}
 
+.header .navbar-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header .navbar-item {
+  font-size: 14px;
+  box-sizing: border-box;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header .navbar-item.active {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 576px) {
+  .header .navbar {
+    justify-content: space-between;
+    flex-direction: row;
+    height: 80px;
+  }
+
+  .header .navbar-nav {
+    width: auto;
+  }
+
+  .header .navbar-item {
+    margin-left: 24px;
+  }
+} 
 
 /* Intro */
+.intro {
+  background-image: url(img/jumbotron.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-top: 140px;
+  padding-bottom: 130px;
+  text-align: center;
+  color: var(--white);
+}
 
+.intro p {
+  margin-top: 32px;
+  margin-bottom: 56px;
+}
 
 /* Services */
+.services {
+  text-align: center;
+}
 
+.services .services-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  margin-top: 40px;
+}
+
+.services img {
+  transition: .6s;
+}
+
+.services img:hover {
+  transform: translateY(-10px);
+}
+
+.services h3 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .services .services-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .services .services-list {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Join */
+.join .join-wrapper {
+  background: #086ad80f;
+  padding: 80px 30px 60px;
+  text-align: center;
+}
 
+.join h2 {
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+
+.join input {
+  margin-right: 12px;
+}
+
+@media screen and (max-width: 576px) {
+  .join input,
+  .join button {
+    display: block;
+    width: 100%;
+  }
+  .join input {
+    margin-bottom: 12px;
+  }
+}
 
 /* Footer */
+.footer {
+  background: #292f31;
+  color: #ececec;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.footer .footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .nav {
+  display: flex;
+}
+
+.footer .nav-item {
+  margin-left: 24px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+  .footer .footer-wrapper,
+  .footer .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer .nav {
+    margin-top: 24px;
+  }
+
+  .footer .nav-item {
+    margin-left: 0;
+    margin-bottom: 12px;
+  }
+}
